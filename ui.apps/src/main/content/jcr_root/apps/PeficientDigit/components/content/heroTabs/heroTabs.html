@@ -1,0 +1,50 @@
+<sly
+	data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" />
+
+<sly data-sly-call="${clientLib.js @ categories='heroTab'}"></sly>
+
+<sly data-sly-use.linkModel="com.ace.heroTab.HeroTabSlingModel" />
+<section class="hero hero-tabs">
+	<div class="container hero-tabs-container">
+		<div class="row hero-content-block">
+			<div class="col-lg-8 container-wrap">
+				<div class="row">
+					<div class="col-md-12 header-wrap">
+						<div class="text-circle">
+							<div class="circle-content">${properties.content}</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 tabs-container">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<sly data-sly-repeat.list="${linkModel.list}">
+							<li class="nav-item"><a class="nav-link" data-toggle="tab"
+								href='#${list.UUID}' role="tab"> ${list.text}</a></li>
+							</sly>
+
+						</ul>
+					</div>
+					<div class="col-md-8 content-container">
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<sly data-sly-repeat.list="${linkModel.list}">
+								<div class="tab-pane fade " id="${list.UUID}" role="tabpanel">
+									<img src='${list.productImageRef}' class='hero-bg'
+										alt='Hunter Douglas' /> <a
+										href='${list.path}.html'
+										class='btn-float'>${list.buttonText}</a>
+
+										<p>${list.strongText @context='html'}</p>
+
+								</div>
+							</sly>
+						</div>
+					</div>
+				</div>
+					<!-- row -->
+			</div>
+		</div>
+	</div>
+</section>

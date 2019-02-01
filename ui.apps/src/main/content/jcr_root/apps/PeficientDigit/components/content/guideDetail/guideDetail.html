@@ -1,0 +1,31 @@
+
+<section class="hero hero-guides">
+  <i class="icon icon-blockangle"></i>
+  <a href="#" class="link-back">Guides</a>
+  <h1>Consumer Market Trends 2015</h1>
+  <div class="container guides-block">
+    <div class="row">
+      <div class="col-md-6">
+
+		<div class="col-md-12 cms-tags">
+        <!--${pageProperties['cq:tags']}-->
+			<sly data-sly-repeat.sky="${pageProperties.cq:tags}">
+          <a href="#">${sky}</a>
+          </sly>
+			${linkModel.tags}
+        </div>
+
+
+        <h1>${properties.title == null? currentPage.title : properties.title} </h1>
+
+		${properties.caption @context='html'}
+
+      </div>
+       <div class="col-md-6">
+          <img src="${properties.fileReference}">
+      </div>
+    </div>
+    
+  </div>
+
+</section>

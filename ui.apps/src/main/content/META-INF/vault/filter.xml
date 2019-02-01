@@ -2,4 +2,5 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/PeficientDigit"/>
     <filter root="/apps/sling" />
+    <filter root="/etc/designs/PerficientDigit" />
 </workspaceFilter>

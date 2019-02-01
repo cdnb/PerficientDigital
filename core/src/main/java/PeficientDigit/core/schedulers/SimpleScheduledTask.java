@@ -59,6 +59,7 @@ public class SimpleScheduledTask implements Runnable {
 
     @Activate
     protected void activate(final Config config) {
+    	logger.error("SimpleScheduledTask active");
         myParameter = config.myParameter();
     }
 

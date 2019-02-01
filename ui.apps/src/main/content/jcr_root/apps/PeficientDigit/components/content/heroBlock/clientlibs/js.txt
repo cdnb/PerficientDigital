@@ -1,0 +1,4 @@
+#base=a
+script.js
+ssadva.js
+sss.js

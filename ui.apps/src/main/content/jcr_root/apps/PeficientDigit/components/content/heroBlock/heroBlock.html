@@ -1,0 +1,44 @@
+<script>
+    window.data ="${properties.fileReference @context='unsafe'}"
+</script>
+
+<section class="hero hero-block red" id="hero-main" >
+		<input style="display:none;" id='image' value='${properties.fileReference}'>
+		<input style="display:none;" id='text' value='${properties.text}'>
+         <input style="display:none;" id='caption' value="${properties.caption @context='html'}">
+         <input style="display:none;" id='atext' value='${properties.aText}'>
+           <input style="display:none;" id='path' value='${properties.path}'>
+
+
+
+
+
+        <div class="hero-slide-menu">
+                <div class="hero-slide-slant"></div>
+                <button class="btn-hero-menu"><span class="slide-btn-open">&#62;</span><span class="slide-btn-close">&#215;</span></button>
+            <ul class="nav slide-nav">
+                    <li data-slideid="0"><a href="#">${properties.label}</a></li>
+                    <li data-slideid="1"><a href="#">Your Brand is Made of Moments</a></li>
+                    <li data-slideid="2"><a href="#">Making Sense of the Blockchain Buzz</a></li>
+                    <li data-slideid="3"><a href="#">Creating the #1 Omni-channel Experience</a></li>
+                    <li data-slideid="4"><a href="#">Rates 30%</a></li>
+            </ul>
+        </div>
+        <div class="hero-background-container">
+            <img class="hero-background large-loaded" src='${properties.fileReference}'
+                 data-mobile-image=/-/media/images/homepage/forresterwave_homepage_hero_sm.jpg
+                 data-image=/-/media/images/homepage/forresterwave_homepage_hero_lg.jpg />
+            <div class="hero-caption"></div>
+        </div>
+        <div class="color-container" style="background: no-repeat right bottom/85%;">
+            <i class="icon icon-blockangle" style=""></i>
+            <div class="hero-content">
+                <h1>${properties.text}</h1>
+                <p>${properties.caption @context='html'}</p>
+                <a href="${properties.path}" class="btn-hero">${properties.aText}</a>
+            </div>
+        </div>
+    </section>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientLib.js @ categories='heroBlock'}"></sly>

@@ -1,0 +1,9 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.css @ categories='com.ace.pd'}"></sly>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.js @ categories='com.ace.pd'}"></sly>
+<meta name="title" content="${properties.jcr:title}"/>
+<meta name="author" content="${properties.jcr:author==null ? properties.jcr:createdBy : properties.jcr:author}"/>
+<meta name="trainer" content="${properties.jcr:trainer}"/>
+<meta name="training_date" content="${'yyyy-MM-dd HH:mm:ss.SSSXXX' @ format= properties.trainDate , timezone='UTC'} "/>
+<meta name="description" content="${properties.jcr:description}"/> 

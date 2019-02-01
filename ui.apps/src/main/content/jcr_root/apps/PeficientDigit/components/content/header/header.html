@@ -1,0 +1,77 @@
+<sly data-sly-use.linkModel="com.ace.NavigationSlingModel" />
+
+<sly data-sly-test = "${wcmmode.edit}"><br/> this is wcmmode</br> </sly>
+
+<header role="banner">
+<div class="search-icon" id="search-trigger-overlay">
+	<span></span>
+</div>
+	<div class="container-fluid">
+		<div class="row">
+				
+<div class="hidden-md-up mobile-logo">
+	<a href="home.html"><img src="${properties.imagePath}"></a>
+</div>
+
+    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#mobilenav">
+         <div class="menu-icon">
+            <div class="center-bar"></div>
+         </div>
+    </button>
+
+<nav class="navbar navbar-full">
+  <div class="collapse navbar-toggleable-sm" id="mobilenav">
+
+	<div class="nav-block">
+  	<div class="main-nav">
+  		<ul>
+	    	<li class="nav-item hidden-sm-down">
+	    		<a href="https://www.perficient.com" class="logo">
+	    			<img src="${properties.imagePath}" alt="${properties.altText}">
+	    		</a>
+	    	</li>
+
+            <sly data-sly-repeat.sky="${linkModel.list}">	    
+                <li class="nav-item">
+                    <a href="${sky.menuPath}.html" class="nav-link dropdown-toggle" id="servicesMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ${sky.lab}	        	
+                    </a>
+                    <div class="dropdown-menu mega-menu" aria-labelledby="servicesMenu">
+                        <div class="menu-title">
+                            <a href="${sky.menuPath}.html">${sky.lab}</a>
+                        </div>		        	
+                        <div class="menu-block">
+                            <ul class="list-unstyled">
+                                 <sly data-sly-repeat.child="${sky.childPage}">	    
+                                 	<li class="mega-menu-item"><a href="${child.menuPath}.html">${child.lab}</a></li>
+                                 </sly>
+                            </ul>
+                        </div>
+		        	</div>
+                </li>
+            </sly>
+	    </ul>
+  	</div>
+						<div class="utility-nav">
+							<ul>
+								<li><a href="${properties.aboutLink}">${properties.aboutLab}</a>
+								</li>
+								<li><a href="${properties.investorsLink}">${properties.investorsLab}</a>
+								</li>
+								<li><a href="${properties.careersLink}">${properties.careersLab}</a>
+								</li>
+								<li><a href="${properties.contactLink}">${properties.contactLab}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</header>
+
+
+

@@ -1,0 +1,15 @@
+#base=js/vendor
+jquery.js
+modernizr.custom.js
+overlay-classes.js
+overlay.js
+tether.min.js
+bootstrap.min.js
+
+
+
+#base=js
+perficient-main.js
+
+#base=js/vendor
+iframeResizer.min.js
